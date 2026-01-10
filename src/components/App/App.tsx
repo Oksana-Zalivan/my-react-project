@@ -1,8 +1,12 @@
-import Product from "./Product";
-import Button from "./Button";
-import UserMenu from "./UserMenu";
+import Product from "../Product/Product";
+import Button from "../Button/Button";
+import UserMenu from "../UserMenu/UserMenu";
+import ActionButton from "../ActionButton/ActionButton";
+import Message from "../Message/Message";
+import ItemList from "../ItemList/ItemList";
 
 export default function App() {
+  const fruits = ["Apple", "Banana", "Orange"];
   return (
     <>
       <UserMenu name="Oksana" />
@@ -23,6 +27,13 @@ export default function App() {
 
       <Button variant="primary" text="Login" />
       <Button variant="secondary" text="Follow" />
+
+      <ActionButton text="Click me" />
+      <ActionButton text="Share screen" />
+
+      <Message text="Hello from App" />
+      
+      <ItemList title="Fruits" items={fruits} />
     </>
   );
 }
