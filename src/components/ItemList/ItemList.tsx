@@ -7,16 +7,21 @@
 
 import css from "./ItemList.module.css";
 
-export default function ItemList() {
-    const items = ["Apple", "Banana", "Orange"];
+type ItemListProps = {
+    items: string[];
+    title?: string;
+};
 
+export default function ItemList({ items, title }: ItemListProps) {
     return (
-        <ul className={css.list}>
-        {items.map((item) => (
-            <li className={css.item} key={item}>
-                {item}
-            </li>
-        ))}
+    <div className={css.container}>
+        {title && <h2>{title}</h2>}
+        <ul>
+            {items.map((item) => (
+            <li key={item}>{item}</li>
+            ))}
         </ul>
+    </div>
     );
 }
+
